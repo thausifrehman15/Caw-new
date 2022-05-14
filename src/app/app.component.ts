@@ -1,15 +1,22 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent { }
+export class AppComponent {
+  width: number = 3;
+  height: number = 3;
 
+  board: number[] = [];
+  randEle: number[] = [];
 
-/*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
+  createboard() {
+    for (var i = 0; i < 10; i++) {
+      const rand = Math.floor(Math.random() * this.width * this.height) + 1;
+      this.randEle.find((x) => x === rand) ? i-- : this.randEle.push(rand);
+    }
+    console.log(this.randEle);
+  }
+}
