@@ -13,10 +13,10 @@ export class AppComponent {
   randEle: number[] = [];
 
   createboard() {
-    // for (var i = 0; i < 10; i++) {
-    //   const rand = Math.floor(Math.random() * this.width * this.height) + 1;
-    //   this.randEle.find((x) => x === rand) ? i++ : this.randEle.push(rand);
-    // }
-    console.log(this.randEle);
+    for (var i = 0; i < this.width; i++) {
+      const rand = Math.floor(Math.random() * this.width * this.height) + 1;
+      console.log(rand);
+      // this.randEle.find((x) => x === rand) ? i++ : this.randEle.push(rand);
+    }
   }
 }
